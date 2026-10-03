@@ -329,23 +329,22 @@
   <img id="modalImage" style="max-width:100%;max-height:90vh;object-fit:contain;border-radius:10px;">
   </div>
   <script>
-document.querySelectorAll('.project img').forEach(function(img){
-  img.style.cursor='zoom-in';
-  img.addEventListener('click',function(){
-    document.getElementById('modalImage').src=this.src;
-    document.getElementById('imageModal').style.display='flex';
-  });
-});
-
-document.getElementById('closeImage').addEventListener('click',function(){
-  document.getElementById('imageModal').style.display='none';
-});
-
-document.getElementById('imageModal').addEventListener('click',function(e){
-  if(e.target===this){
-    this.style.display='none';
+document.addEventListener('click', function(e){
+  if(e.target.tagName === 'IMG' && e.target.closest('.project')){
+    document.getElementById('modalImage').src = e.target.src;
+    document.getElementById('imageModal').style.display = 'flex';
   }
 });
+
+document.getElementById('closeImage').onclick = function(){
+  document.getElementById('imageModal').style.display = 'none';
+};
+
+document.getElementById('imageModal').onclick = function(e){
+  if(e.target === this){
+    this.style.display = 'none';
+  }
+};
   </script>
 </body>
 </html>
