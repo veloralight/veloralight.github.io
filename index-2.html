@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="دفتر مهندسی برق ولورا | طراحی و اجرای تخصصی برق و نورپردازی در کرمانشاه و حومه">
+  <title>دفتر مهندسی برق ولورا | VELORA</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+
+    :root{
+      --bg:#070707;
+      --card:#101010;
+      --gold:#f5b92e;
+      --gold2:#ffd76a;
+      --text:#f7f7f7;
+      --muted:#a8a8a8;
+      --line:#282828;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      background:var(--bg);color:var(--text);font-family:'Vazirmatn',Tahoma,sans-serif;
+      line-height:1.8;
+    }
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1120px,92%);margin:auto}
+    header{
+      position:fixed;top:0;left:0;right:0;z-index:20;
+      background:rgba(7,7,7,.88);backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(245,185,46,.12)
+    }
+    nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
+    .logo{
+      width:40px;height:40px;border:1px solid var(--gold);border-radius:12px;
+      display:grid;place-items:center;color:var(--gold);font-size:22px;
+      box-shadow:0 0 24px rgba(245,185,46,.12)
+    }
+    .brand small{display:block;color:var(--muted);font-size:10px;font-weight:500}
+    .brand b{font-size:19px;letter-spacing:1px}
+    .links{display:flex;gap:28px;color:#ddd;font-size:14px}
+    .links a:hover{color:var(--gold)}
+    .nav-phone{color:var(--gold);font-size:13px;direction:ltr;white-space:nowrap}
+
+    .hero{
+      min-height:760px;padding-top:74px;display:flex;align-items:center;
+      position:relative;overflow:hidden;
+      background:
+        radial-gradient(circle at 75% 35%,rgba(245,185,46,.17),transparent 27%),
+        radial-gradient(circle at 15% 80%,rgba(245,185,46,.07),transparent 25%),
+        linear-gradient(125deg,#050505 0%,#0b0b0b 48%,#15110a 100%);
+    }
+    .hero:after{
+      content:"";position:absolute;inset:auto -10% -30% 25%;height:60%;
+      background:repeating-linear-gradient(125deg,transparent 0 80px,rgba(245,185,46,.045) 81px 83px);
+      transform:rotate(-8deg);pointer-events:none
+    }
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:45px;align-items:center;position:relative;z-index:1}
+    .eyebrow{color:var(--gold);font-size:15px;font-weight:700;margin-bottom:14px}
+    h1{font-size:clamp(42px,6vw,78px);line-height:1.15;margin-bottom:20px}
+    h1 span{color:var(--gold)}
+    .lead{font-size:20px;color:#ddd;max-width:650px;margin-bottom:10px}
+    .location{color:var(--muted);margin-bottom:30px}
+    .actions{display:flex;gap:14px;flex-wrap:wrap}
+    .btn{
+      padding:13px 24px;border-radius:12px;border:1px solid var(--gold);
+      font-weight:700;transition:.2s;display:inline-flex;align-items:center;gap:8px
+    }
+    .btn.primary{background:var(--gold);color:#111}
+    .btn.secondary{background:transparent;color:#fff}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(245,185,46,.13)}
+    .hero-art{
+      min-height:430px;border:1px solid #292929;border-radius:28px;
+      background:
+        linear-gradient(145deg,rgba(245,185,46,.11),transparent 45%),
+        radial-gradient(circle at 60% 35%,rgba(245,185,46,.20),transparent 22%),
+        #0c0c0c;
+      position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;
+      box-shadow:0 25px 80px rgba(0,0,0,.5)
+    }
+    .hero-art:before,.hero-art:after{
+      content:"";position:absolute;border:2px solid rgba(245,185,46,.35);transform:rotate(45deg)
+    }
+    .hero-art:before{width:250px;height:250px}
+    .hero-art:after{width:150px;height:150px}
+    .bolt{font-size:125px;color:var(--gold);filter:drop-shadow(0 0 28px rgba(245,185,46,.4));z-index:2}
+    .art-label{position:absolute;bottom:25px;right:25px;color:#bbb;font-size:13px;z-index:3}
+
+    section{padding:90px 0}
+    .section-head{text-align:center;margin-bottom:42px}
+    .section-head .kicker{color:var(--gold);font-size:13px;font-weight:700}
+    .section-head h2{font-size:34px;margin:5px 0}
+    .section-head p{color:var(--muted);font-size:14px}
+    .services{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+    .service{
+      background:linear-gradient(145deg,#111,#0b0b0b);border:1px solid var(--line);
+      border-radius:16px;padding:23px 15px;min-height:145px;
+      transition:.25s
+    }
+    .service:hover{border-color:rgba(245,185,46,.5);transform:translateY(-4px)}
+    .icon{font-size:30px;color:var(--gold);margin-bottom:8px}
+    .service h3{font-size:15px;margin-bottom:4px}
+    .service p{font-size:11px;color:var(--muted)}
+
+    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .project{
+      min-height:230px;border:1px solid var(--line);border-radius:18px;overflow:hidden;
+      position:relative;background:
+        linear-gradient(135deg,rgba(245,185,46,.16),transparent 50%),
+        linear-gradient(160deg,#17130b,#0b0b0b);
+    }
+    .project:before{content:"";position:absolute;inset:28px;border:1px solid rgba(245,185,46,.2);border-radius:10px}
+    .project .ptext{position:absolute;bottom:18px;right:18px;left:18px}
+    .project strong{display:block;color:#fff}
+    .project span{font-size:12px;color:var(--gold)}
+    .project-note{text-align:center;color:#777;font-size:12px;margin-top:20px}
+
+    .about{
+      display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:stretch
+    }
+    .about-box,.contact-box{
+      border:1px solid var(--line);border-radius:22px;background:#0d0d0d;padding:32px
+    }
+    .about-box h2,.contact-box h2{font-size:28px;margin-bottom:12px}
+    .about-box p{color:#c2c2c2}
+    .points{display:grid;gap:14px;margin-top:22px}
+    .point{display:flex;gap:12px;align-items:flex-start}
+    .point b{color:var(--gold)}
+
+    .contact{
+      background:linear-gradient(135deg,#0d0d0d,#17120a);
+      border-top:1px solid rgba(245,185,46,.15);
+      border-bottom:1px solid rgba(245,185,46,.15)
+    }
+    .contact-inner{display:grid;grid-template-columns:1fr auto;align-items:center;gap:30px}
+    .phone{font-size:30px;color:var(--gold);direction:ltr;text-align:right;font-weight:800}
+    .muted{color:var(--muted)}
+
+    footer{padding:28px 0;color:#777;font-size:12px}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}
+    .footer-brand{color:#ddd;font-weight:700}
+
+    @media(max-width:900px){
+      .links{display:none}
+      .hero{min-height:auto;padding:125px 0 70px}
+      .hero-grid,.about,.contact-inner{grid-template-columns:1fr}
+      .hero-art{min-height:300px}
+      .services{grid-template-columns:repeat(2,1fr)}
+      .projects{grid-template-columns:1fr}
+      .nav-phone{display:none}
+    }
+    @media(max-width:520px){
+      .services{grid-template-columns:1fr}
+      .hero-art{min-height:260px}
+      .bolt{font-size:90px}
+      section{padding:65px 0}
+      .section-head h2{font-size:28px}
+      .phone{font-size:24px}
+      .footer-inner{flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="#home">
+        <div class="logo">ϟ</div>
+        <div><b>VELORA</b><small>دفتر مهندسی برق</small></div>
+      </a>
+      <div class="links">
+        <a href="#home">صفحه اصلی</a>
+        <a href="#services">خدمات</a>
+        <a href="#projects">نمونه‌کارها</a>
+        <a href="#about">درباره ما</a>
+        <a href="#contact">تماس با ما</a>
+      </div>
+      <a class="nav-phone" href="tel:09194494281">09194494281</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">طراحی و اجرای تخصصی برق و نورپردازی</div>
+        <h1>دفتر مهندسی برق <span>ولورا</span></h1>
+        <p class="lead">طراحی و اجرای حرفه‌ای سیستم‌های برق، روشنایی و نورپردازی مدرن</p>
+        <p class="location">📍 کرمانشاه و حومه</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">📸 مشاهده نمونه‌کارها</a>
+          <a class="btn secondary" href="tel:09194494281">📞 تماس با دفتر</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="bolt">ϟ</div>
+        <div class="art-label">تصویر اصلی سایت — بعداً با عکس شما جایگزین می‌شود</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <div class="kicker">خدمات تخصصی</div>
+        <h2>خدمات ولورا</h2>
+        <p>از طراحی تا اجرای پروژه‌های برق و نورپردازی</p>
+      </div>
+      <div class="services">
+        <article class="service"><div class="icon">⚡</div><h3>برق‌کاری ساختمان</h3><p>اجرای اصولی تأسیسات و سیم‌کشی برق</p></article>
+        <article class="service"><div class="icon">💡</div><h3>طراحی و اجرای روشنایی</h3><p>طراحی نور متناسب با کاربری و فضا</p></article>
+        <article class="service"><div class="icon">✨</div><h3>نورپردازی دکوراتیو</h3><p>خلق فضای مدرن و چشم‌نواز</p></article>
+        <article class="service"><div class="icon">〰️</div><h3>نور مخفی</h3><p>اجرای نور مخفی سقف، دیوار و دکور</p></article>
+        <article class="service"><div class="icon">▱</div><h3>لاین نوری</h3><p>طراحی و اجرای خطوط نوری مدرن</p></article>
+        <article class="service"><div class="icon">🏪</div><h3>نورپردازی فروشگاه و ویترین</h3><p>تمرکز نور برای نمایش بهتر محصولات</p></article>
+        <article class="service"><div class="icon">🏢</div><h3>نورپردازی تجاری و اداری</h3><p>روشنایی کاربردی و حرفه‌ای</p></article>
+        <article class="service"><div class="icon">◉</div><h3>چراغ‌های توکار و روکار</h3><p>اجرای انواع چراغ و تجهیزات روشنایی</p></article>
+        <article class="service"><div class="icon">🏠</div><h3>نورپردازی نما و فضای بیرونی</h3><p>تأکید بر معماری و جلوه شبانه</p></article>
+        <article class="service"><div class="icon">📐</div><h3>مشاوره و طراحی سیستم روشنایی</h3><p>انتخاب راهکار مناسب پیش از اجرا</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-head">
+        <div class="kicker">پروژه‌ها</div>
+        <h2>نمونه‌کارهای ولورا</h2>
+        <p>نمونه‌های واقعی پروژه‌ها بعداً در این بخش قرار می‌گیرند.</p>
+      </div>
+      <div class="projects">
+        <article class="project"><div class="ptext"><strong>نورپردازی داخلی</strong><span>نمونه پروژه</span></div></article>
+        <article class="project"><div class="ptext"><strong>اجرای لاین نوری</strong><span>نمونه پروژه</span></div></article>
+        <article class="project"><div class="ptext"><strong>نورپردازی فروشگاه</strong><span>نمونه پروژه</span></div></article>
+        <article class="project"><div class="ptext"><strong>نور مخفی</strong><span>نمونه پروژه</span></div></article>
+        <article class="project"><div class="ptext"><strong>روشنایی نما</strong><span>نمونه پروژه</span></div></article>
+        <article class="project"><div class="ptext"><strong>روشنایی تجاری</strong><span>نمونه پروژه</span></div></article>
+      </div>
+      <p class="project-note">هر زمان عکس پروژه‌ها را آماده کردی، این بخش را با تصاویر واقعی و توضیحات پروژه‌ها تکمیل می‌کنیم.</p>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container about">
+      <div class="about-box">
+        <div class="section-head" style="text-align:right;margin-bottom:15px">
+          <div class="kicker">درباره ولورا</div>
+          <h2>مهندسی برق با تمرکز بر نور و اجرا</h2>
+        </div>
+        <p>ولورا با تمرکز بر طراحی و اجرای پروژه‌های برق و نورپردازی، تلاش می‌کند راهکارهایی دقیق، زیبا و متناسب با فضای هر پروژه ارائه دهد.</p>
+        <div class="points">
+          <div class="point"><b>✓</b><span>طراحی متناسب با فضای پروژه</span></div>
+          <div class="point"><b>✓</b><span>اجرای تمیز و اصولی</span></div>
+          <div class="point"><b>✓</b><span>مشاوره پیش از اجرا</span></div>
+          <div class="point"><b>✓</b><span>فعالیت در کرمانشاه و حومه</span></div>
+        </div>
+      </div>
+      <div class="contact-box">
+        <div class="section-head" style="text-align:right;margin-bottom:15px">
+          <div class="kicker">شروع همکاری</div>
+          <h2>پروژه‌ات را با ولورا شروع کن</h2>
+        </div>
+        <p class="muted">برای مشاوره، هماهنگی بازدید و اجرای پروژه با دفتر تماس بگیرید.</p>
+        <br>
+        <a class="btn primary" href="tel:09194494281">📞 تماس با دفتر</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container contact-inner">
+      <div>
+        <div class="kicker" style="color:var(--gold)">تماس با دفتر ولورا</div>
+        <h2>برای مشاوره و اجرای پروژه با ما در تماس باشید.</h2>
+        <p class="muted">کرمانشاه و حومه</p>
+      </div>
+      <a class="phone" href="tel:09194494281">09194494281</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-brand">⚡ VELORA | دفتر مهندسی برق ولورا</div>
+    <div>© 2026 تمامی حقوق محفوظ است.</div>
+  </div>
+</footer>
+
+</body>
+</html>
